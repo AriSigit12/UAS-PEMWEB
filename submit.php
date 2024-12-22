@@ -2,7 +2,7 @@
 session_start();
 
 // Include file yang berisi kelas User
-require_once 'User.php';  // Sesuaikan path jika diperlukan
+require_once 'User.php';  
 
 // Ambil data dari form
 $name = $_POST['name'] ?? '';
@@ -21,17 +21,17 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     exit;
 }
 
-// Simpan data ke dalam session
+// Menyimpan data ke dalam session
 $_SESSION['name'] = $name;
 $_SESSION['email'] = $email;
 $_SESSION['gender'] = $gender;
 $_SESSION['subscribe'] = $subscribe;
 
-// Simpan informasi IP dan browser
+// Menyimpan informasi IP dan browser
 $user_ip = $_SERVER['REMOTE_ADDR'];
 $user_browser = $_SERVER['HTTP_USER_AGENT'];
 
-// Simpan data ke dalam database (asumsi sudah ada koneksi ke database)
+// Menyimpan data ke dalam database (asumsi sudah ada koneksi ke database)
 include 'db.php';
 
 $user = new User($name, $email, $gender, $subscribe, $conn);

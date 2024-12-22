@@ -8,7 +8,7 @@ document.getElementById('userForm').addEventListener('submit', function(event) {
         event.preventDefault();
     }
 
-    // Cek apakah checkbox berlangganan dipilih
+    // Mengecek apakah checkbox berlangganan dipilih
     const subscribe = document.getElementById('subscribe').checked;
     if (subscribe) {
         alert("Terima kasih telah memilih untuk berlangganan!");

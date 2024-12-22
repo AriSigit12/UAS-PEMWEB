@@ -38,13 +38,13 @@
         <tbody>
             <?php
             // Koneksi ke database (gunakan koneksi yang sudah ada)
-            include 'db.php';  // Pastikan ini adalah file koneksi yang benar
+            include 'db.php';  
 
             // Query untuk mengambil semua data pengguna
             $sql = "SELECT * FROM users";
             $result = mysqli_query($conn, $sql);
 
-            // Cek apakah ada data yang dikembalikan
+            // Mengecek apakah ada data yang dikembalikan
             if (mysqli_num_rows($result) > 0) {
                 // Menampilkan data dalam tabel
                 while ($row = mysqli_fetch_assoc($result)) {
